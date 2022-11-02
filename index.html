@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            background-color: aliceblue;
+            width:100%;
+            height:95%;
+            left:0;
+            top:0;
+            position: fixed;
+        }
+
+        @keyframes movement{
+            0% {opacity: 0;}
+            5% {opacity: 1;}
+            95%{opacity: 1;}
+            100% {opacity: 0; transform: translateX(0px) translateY(0px);}
+        }
+
+        div div{
+            height:25px;
+            width:25px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            margin: auto;
+            opacity: 0;
+            animation: movement 2500ms cubic-bezier(0.125, 0, 0.410, 0) infinite;
+            animation-direction: reverse;
+        }
+
+        #navbar{
+            background-color: black;
+            position:fixed;
+            bottom: 0;
+            height: 10%;
+            width: 100%;
+            margin:auto;
+            left:0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 10px;
+            padding-top: 3px;
+        }
+
+        #navbar button{
+            margin-left: 15px;
+            margin-right: 15px;
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            border-radius: 12px;
+            padding:10px
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script src="src.js"></script>
+    <div id="navbar">
+        <button type="'button" onclick="changePalette(1)">Red Palette</button>
+        <button type="'button" onclick="changePalette(2)">Blue Palette</button>
+        <button type="'button" onclick="changePalette(3)">Yellow Palette</button>
+        <button type="'button" onclick="changePalette(4)">Green Palette</button>
+        <button type="'button" onclick="changePalette(0)">Random Palette</button>
+    </div>
+</body>
+</html>
